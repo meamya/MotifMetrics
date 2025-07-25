@@ -6,21 +6,21 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="bg-white pt-32 pb-20 px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center justify-between gap-10"
+      className="relative bg-white pt-32 pb-20 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 flex flex-col-reverse md:flex-row items-center justify-between gap-10"
     >
       {/* Left Side */}
       <div className="flex-1 max-w-xl text-center md:text-left">
         <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight text-charcoal mb-4">
           We build{' '}
           <span className="bg-gradient-to-r from-[#265e5c] to-[#4c8575] text-transparent bg-clip-text">
-            wellness tools
+            tools
           </span>{' '}
-          that restore rhythm, clarity, and calm.
+          that help rhythm, clarity, and transmute chaos into calm.
         </h1>
 
         <p className="text-lg text-gray-700 font-light mb-6">
-          Our products aren't just features — they’re invitations to come back to yourself, reclaim time,
-          and reimagine how we live, breathe, and connect.
+          Our digital experiences are invitations to reclaim time, energy
+          and reimagine wellness.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -39,35 +39,53 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="mt-10 flex flex-col sm:flex-row gap-6 justify-center md:justify-start text-center">
-          <StatItem value="2 Products in Beta" label="FLO + Wellness & the City" />
-          <StatItem value="Built for Nervous System Healing" label="Designed for real humans" />
+        <div className="mt-10 flex justify-center md:justify-start items-start gap-x-4 sm:gap-x-8 text-center flex-nowrap overflow-x-auto">
+          <StatItem value="Products in Beta" label="FLO + Wellness & the City Guide-Dallas" />
+          <StatItem value="Lifestyle" label="Apps built for wellness lifestyle enthusists" />
           <StatItem value="Rooted in Rhythm" label="Guided by intention, not iteration" />
         </div>
       </div>
 
       {/* Right Side Image */}
       <div className="flex-1 relative w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-md">
-        <Image
-          src="/hero-placeholder.jpg"
-          alt="Wellness visual"
-          fill
-          className="object-cover"
+      <img
+          src="/assets/hero.image.png"
+          alt="Hero background"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute bottom-4 right-4 bg-white rounded-xl px-4 py-2 shadow text-sm font-medium text-charcoal">
-          <span className="text-yellow-500">●</span> Beta Phase<br />
-          <span className="text-[#4c8575] font-semibold">Early Access Open</span>
+        <div className="absolute bottom-4 right-2 bg-white rounded-xl px-4 py-2 shadow text-sm font-medium text-charcoal">
+          <span className="text-yellow-500">●</span> Currently In Soft Launch<br />
+          <span className="text-[#4c8575] font-semibold">Now Inviting Early Access</span>
         </div>
+      </div>
+
+      {/* Bouncing Arrow */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <a
+          href="#projects"
+          aria-label="Scroll to projects"
+          className="w-12 h-12 flex items-center justify-center rounded-full border border-[#4c8575] text-[#4c8575] hover:bg-[#4c8575] hover:text-white transition"
+        >
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
       </div>
     </section>
   );
 }
 
-function StatItem({ value, label }: { value: string; label: string }) {
+export function StatItem({ value, label }: { value: string; label: string }) {
   return (
-    <div className="flex flex-col items-center">
-      <div className="text-md sm:text-xl font-semibold text-charcoal">{value}</div>
-      <div className="text-sm text-gray-600">{label}</div>
+    <div className="flex flex-col items-center text-sm sm:text-base min-w-[120px]">
+      <div className="font-semibold text-[14px] sm:text-[16px]">{value}</div>
+      <div className="text-gray-600 text-[12px] sm:text-[14px] leading-tight">{label}</div>
     </div>
   );
 }

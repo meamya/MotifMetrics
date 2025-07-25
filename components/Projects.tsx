@@ -1,74 +1,74 @@
 'use client';
 import React from 'react';
+import { motion } from 'framer-motion';
 
-export default function Projects() {
+const projects = [
+  {
+    href: 'https://flo.studio',
+    topTag: 'Wellness Tech',
+    stat: 'Beta Launch Live',
+    title: 'FLO: Breathwork App',
+    description:
+      'A nervous system healing app offering guided breath practices, HRV tracking, and somatic journaling.',
+    tags: ['Lifestyle', 'Burnout Prevention', 'iOS App', 'Breathwork'],
+  },
+  {
+    href: 'https://wellnessandthecity.guide',
+    topTag: 'Travel & Culture',
+    stat: 'Location-Based',
+    title: 'Wellness & the City Guide: Dallas',
+    description:
+      'A curated city guide for soulful spaces, heart-led wellness businesses, and culture-forward experiences.',
+    tags: ['Dallas', 'Curated Experiences', 'City-Based Wellness and Culture', 'Travel Tech'],
+  },
+];
+
+export default function ProjectsPage() {
   return (
-    <section id="projects" className="bg-white py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-      <h2 className="text-3xl sm:text-4xl font-bold text-center bg-gradient-to-r from-[#265e5c] to-[#4c8575] text-transparent bg-clip-text mb-12">
-  Currently in Beta
-</h2>
+    <section id="projects" className="bg-[#f8f7f2] pt-20 pb-8 px-6 sm:px-10 lg:px-20">
+      <div className="max-w-5xl mx-auto text-center mb-12">
+        <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">
+          <span className="bg-gradient-to-r from-[#265e5c] to-[#4c8575] text-transparent bg-clip-text">
+            Projects & Products
+          </span>
+        </h2>
+        <p className="text-md sm:text-lg text-charcoal font-light max-w-2xl mx-auto">
+          Tools and experiences crafted at the intersection of wellness, culture, and tech.
+        </p>
+      </div>
 
-
-        <div className="grid gap-8 sm:grid-cols-2">
-          <ProjectCard
-            title="FLO"
-            label="App"
-            badge="Beta"
-            description="A breathwork app designed for nervous system healing, emotional clarity, and personal rhythm tracking."
-            href="https://flo.studio"
-          />
-          <ProjectCard
-            title="Wellness & the City Guide"
-            label="Directory"
-            badge="Beta"
-            description="A curated wellness guide spotlighting soulful spots across Dallas — from spas to sound healing."
-            href="https://wellnessandthecity.guide"
-          />
-        </div>
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
+        {projects.map((project, idx) => (
+          <motion.a
+            key={idx}
+            href={project.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ y: -6, scale: 1.015 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow cursor-pointer block"
+          >
+            <div className="flex justify-between items-center mb-3">
+              <span className="text-xs bg-gray-100 text-gray-800 px-3 py-1 rounded-full font-medium">
+                {project.topTag}
+              </span>
+              <span className="text-xs text-orange-500 font-semibold">{project.stat}</span>
+            </div>
+            <h3 className="text-lg sm:text-xl font-bold text-charcoal mb-2">{project.title}</h3>
+            <p className="text-sm text-gray-600 mb-4">{project.description}</p>
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag, i) => (
+                <span
+                  key={i}
+                  className="text-xs bg-gray-100 text-[#2d493e] px-3 py-1 rounded-full font-medium"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </motion.a>
+        ))}
       </div>
     </section>
-  );
-}
-
-function ProjectCard({
-  title,
-  label,
-  description,
-  href,
-  badge,
-}: {
-  title: string;
-  label?: string;
-  description: string;
-  href: string;
-  badge?: string;
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group block bg-cream rounded-2xl border border-gray-200 shadow hover:shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1 p-6"
-    >
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-2">
-          {label && (
-            <span className="text-xs bg-gray-200 text-gray-700 px-2 py-0.5 rounded-full">
-              {label}
-            </span>
-          )}
-          <h3 className="text-xl font-semibold text-charcoal group-hover:text-rust transition">
-            {title}
-          </h3>
-        </div>
-        {badge && (
-          <span className="text-xs bg-sage text-white px-2 py-0.5 rounded-full font-medium">
-            {badge}
-          </span>
-        )}
-      </div>
-      <p className="text-sm text-gray-700">{description}</p>
-    </a>
   );
 }

@@ -1,37 +1,37 @@
 'use client';
 import React from 'react';
 import {
-  Lightbulb,
-  Sliders,
-  Heart,
-  Zap,
-} from 'lucide-react'; // Using lucide-react for icons
+  Handshake,
+  Rocket,
+  FileText,
+  BarChart,
+} from 'lucide-react';
 
 export default function Collaborate() {
   const offers = [
     {
-      title: 'Product Strategy',
+      title: 'Brand Partnerships',
       description:
-        'From concept to launch, we guide your wellness product vision into reality.',
-      icon: Lightbulb,
+        'Support the FLO app’s vision by sponsoring breathwork sessions or featured experiences that meet people where they are.',
+      icon: Handshake,
     },
     {
-      title: 'Data Analytics',
+      title: 'Curated Visibility',
       description:
-        'Transform wellness data into actionable insights that drive user engagement.',
-      icon: Sliders,
+        'Place your brand or offering within spaces of Wellness & the City Guide launching first in Dallas.',
+      icon: Rocket,
     },
     {
-      title: 'User Experience',
+      title: 'Insightful Research',
       description:
-        'Design experiences that motivate healthy behaviors and long-term wellness habits.',
-      icon: Heart,
+        'Co-create or access research rooted in wellness, culture, and emotional rhythm with real-world, community-led insights.',
+      icon: FileText,
     },
     {
-      title: 'Technology Integration',
+      title: 'Aligned Metrics',
       description:
-        'Seamlessly connect wearables, apps, and platforms for holistic wellness ecosystems.',
-      icon: Zap,
+        'Receive thoughtful engagement recaps that reflect emotional impact, resonance, and meaningful reach.',
+      icon: BarChart,
     },
   ];
 
@@ -39,14 +39,10 @@ export default function Collaborate() {
     <section id="collaborate" className="bg-gray-100 px-6 py-20">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-charcoal">
-          Let’s{' '}
-          <span className="text-[#4c8575]">
-            Collaborate
-          </span>{' '}
-          on Wellness
+          Let’s <span className="text-[#4c8575]">Collaborate</span> for Good
         </h2>
         <p className="text-md sm:text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
-          Ready to transform your wellness vision into reality? We bring deep expertise in health technology, user psychology, and data science to every partnership.
+          We partner with brands, creators, and collaborators who believe in more intentional digital spaces and real connection.
         </p>
 
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
