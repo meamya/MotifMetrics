@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .text-ritual {
+      line-height: 1.7;
+      letter-spacing: 0.025em;
+    }
+  }
