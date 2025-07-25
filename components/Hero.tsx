@@ -60,23 +60,25 @@ export default function Hero() {
       </div>
 
       {/* Bouncing Arrow */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <a
-          href="#projects"
-          aria-label="Scroll to projects"
-          className="w-12 h-12 flex items-center justify-center rounded-full border border-[#4c8575] text-[#4c8575] hover:bg-[#4c8575] hover:text-white transition"
-        >
-          <svg
-            className="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </a>
-      </div>
+     {/* Bouncing Arrow */}
+<div className="absolute bottom-6 w-full flex justify-center animate-bounce">
+  <a
+    href="#projects"
+    aria-label="Scroll to projects"
+    className="w-12 h-12 flex items-center justify-center rounded-full border border-[#4c8575] text-[#4c8575] hover:bg-[#4c8575] hover:text-white transition"
+  >
+    <svg
+      className="w-8 h-8"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </a>
+</div>
+
     </section>
   );
 }
