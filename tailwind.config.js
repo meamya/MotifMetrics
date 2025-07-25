@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        white: '#ffffff',      // ✅ fixed
+        white: '#ffffff',     
         cream: '#fdfaf4',
         peach: '#fcd5ce',
         rust: '#b45309',

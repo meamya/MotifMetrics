@@ -1,91 +1,92 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen bg-[#f8f7f2] text-center md:text-left px-4 sm:px-8 pt-20 md:pt-32 pb-10 overflow-hidden"
+      className="relative bg-white pt-32 pb-32 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 flex flex-col-reverse md:flex-row items-center justify-between gap-10"
+      style={{ minHeight: '80vh' }}
     >
-      <div className="max-w-screen-xl mx-auto w-full flex flex-col-reverse md:flex-row items-center justify-between gap-8">
-        {/* Left: Text Content */}
-        <div className="flex-1 max-w-xl z-10">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-charcoal">
-            We build tools that help <br />
-            rhythm, clarity, and <br />
-            transmute chaos into calm.
-          </h1>
-          <p className="text-base sm:text-lg text-gray-700 mt-4">
-            Our digital experiences are invitations to reclaim time, energy and reimagine wellness.
-          </p>
+      {/* Left Side */}
+      <div className="flex-1 max-w-xl text-center md:text-left">
+        <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight text-charcoal mb-4">
+          Digital{' '}
+          <span className="bg-gradient-to-r from-[#265e5c] to-[#4c8575] text-transparent bg-clip-text">
+            wellness tools
+          </span>{' '}
+          that help you find rhythm, clarity, and transform chaos into calm.
+        </h1>
 
-          {/* Buttons */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
-            <a
-              href="#projects"
-              className="bg-[#2d493e] text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition"
-            >
-              Explore Our Work
-            </a>
-            <a
-              href="#collaborate"
-              className="border border-[#2d493e] text-[#2d493e] px-6 py-3 rounded-full font-semibold hover:bg-[#edf1ee] transition"
-            >
-              Start Collaborating
-            </a>
-          </div>
+        <p className="text-lg text-gray-700 font-light mb-6">
+          Our digital experiences are invitations to reclaim time, energy
+          and reimagine wellness.
+        </p>
 
-          {/* Pillars */}
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left text-sm">
-            <div>
-              <p className="font-bold">Products in Beta</p>
-              <p>FLO + Wellness & the City Guide–Dallas</p>
-            </div>
-            <div>
-              <p className="font-bold">Lifestyle</p>
-              <p>Apps built for wellness lifestyle enthusiasts</p>
-            </div>
-            <div>
-              <p className="font-bold">Rooted in Rhythm</p>
-              <p>Guided by intention, not iteration</p>
-            </div>
-          </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a
+            href="#projects"
+            className="bg-gradient-to-r from-[#265e5c] to-[#4c8575] text-white px-6 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition"
+          >
+            Explore Our Work
+          </a>
+          <a
+            href="#collaborate"
+            className="border border-[#4c8575] text-[#4c8575] px-6 py-3 rounded-full text-sm font-semibold hover:bg-[#4c8575] hover:text-white transition"
+          >
+            Start Collaborating
+          </a>
         </div>
 
-        {/* Right: Hero Image */}
-        <div className="flex-1 w-full relative">
-          <div className="relative w-full h-auto rounded-3xl overflow-hidden shadow-md">
-            <Image
-              src="/assets/hero.image.png"
-              alt="Hero graphic"
-              width={800}
-              height={600}
-              className="rounded-3xl w-full h-auto object-cover"
-              priority
-            />
-            {/* Soft Launch Tag */}
-            <div className="absolute bottom-4 right-4 bg-white shadow px-4 py-2 rounded-xl text-left text-sm">
-              <p className="text-xs text-yellow-600">🟡 Currently In Soft Launch</p>
-              <p className="text-green-700 font-semibold">Now Inviting Early Access</p>
-            </div>
-          </div>
+        {/* Stats */}
+        <div className="mt-10 flex justify-center md:justify-start items-start gap-x-4 sm:gap-x-8 text-center flex-nowrap overflow-x-auto">
+          <StatItem value="Products in Beta" label="FLO + Wellness & the City Guide-Dallas" />
+          <StatItem value="Lifestyle" label="Apps built for wellness lifestyle enthusists" />
+          <StatItem value="Rooted in Rhythm" label="Guided by intention, not iteration" />
         </div>
       </div>
 
-      {/* Down Arrow */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-        className="mt-4 flex justify-center"
-      >
-        <a href="#projects" className="p-4 rounded-full border border-[#2d493e]">
-          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M6 9l6 6 6-6" />
+      {/* Right Side Image */}
+      <div className="flex-1 relative w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-md">
+        <img
+          src="/assets/hero.image.png"
+          alt="Hero background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute bottom-4 right-2 bg-white rounded-xl px-4 py-2 shadow text-sm font-medium text-charcoal">
+          <span className="text-yellow-500">●</span> Currently In Soft Launch<br />
+          <span className="text-[#4c8575] font-semibold">Now Inviting Early Access</span>
+        </div>
+      </div>
+
+      {/* Bouncing Arrow - Centered on mobile with proper spacing */}
+      <div className="absolute bottom-8 inset-x-0 flex justify-center z-20">
+        <a
+          href="#projects"
+          aria-label="Scroll to projects"
+          className="w-12 h-12 flex items-center justify-center rounded-full border border-[#4c8575] text-[#4c8575] hover:bg-[#4c8575] hover:text-white transition animate-bounce"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </a>
-      </motion.div>
+      </div>
     </section>
+  );
+}
+
+export function StatItem({ value, label }: { value: string; label: string }) {
+  return (
+    <div className="flex flex-col items-center text-sm sm:text-base min-w-[120px]">
+      <div className="font-semibold text-[14px] sm:text-[16px]">{value}</div>
+      <div className="text-gray-600 text-[12px] sm:text-[14px] leading-tight">{label}</div>
+    </div>
   );
 }
