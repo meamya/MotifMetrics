@@ -59,10 +59,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bouncing Arrow */}
      {/* Bouncing Arrow */}
-<div className="absolute bottom-6 w-full flex justify-center animate-bounce">
-  <a
+     <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce p-2">
+     <a
     href="#projects"
     aria-label="Scroll to projects"
     className="w-12 h-12 flex items-center justify-center rounded-full border border-[#4c8575] text-[#4c8575] hover:bg-[#4c8575] hover:text-white transition"
