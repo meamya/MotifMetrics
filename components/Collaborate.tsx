@@ -18,7 +18,7 @@ export default function Collaborate() {
     {
       title: 'Curated Visibility',
       description:
-        'Place your brand or offering within spaces of Wellness & the City Guide launching first in Dallas.',
+        'Place your aligned brand or offering within spaces of Wellness & the City Guide launching first in Dallas.',
       icon: Rocket,
     },
     {
@@ -28,7 +28,7 @@ export default function Collaborate() {
       icon: FileText,
     },
     {
-      title: 'Aligned Metrics',
+      title: 'Metrics',
       description:
         'Receive thoughtful engagement recaps that reflect emotional impact, resonance, and meaningful reach.',
       icon: BarChart,
