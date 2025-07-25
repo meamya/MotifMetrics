@@ -5,6 +5,7 @@ import Projects from '../components/Projects';
 import Collaborate from '../components/Collaborate';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import BackToTop from '../components/BackToTop';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Contact />
         <Footer />
       </main>
+      <BackToTop />
     </>
   );
 }
