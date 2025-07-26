@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-export default function Hero() {
+export default function Home() {
   return (
     <section
       id="hero"
@@ -16,12 +16,12 @@ export default function Hero() {
           <span className="bg-gradient-to-r from-[#265e5c] to-[#4c8575] text-transparent bg-clip-text">
             wellness tools
           </span>{' '}
-          that help you find rhythm, clarity, and transform chaos into calm.
+          to help you restore rhythm, deepen clarity, and transform chaos into calm.
+
         </h1>
 
         <p className="text-lg text-gray-700 font-light mb-6">
-          Our digital experiences are invitations to reclaim time, energy
-          and reimagine wellness.
+        From self discovery to local wellness, our work is supported by brands that share your values.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
