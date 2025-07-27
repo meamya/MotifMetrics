@@ -9,7 +9,7 @@ const projects = [
     stat: 'Beta Launch Live',
     title: 'FLO: Breathwork App',
     description:
-      'A nervous system healing app offering guided breath practices, HRV tracking, and somatic journaling.',
+      'A breathwork app offering guided breath practices, spiritual and scientific perspective, HRV tracking, and mood journaling.',
     tags: ['Lifestyle', 'Burnout Prevention', 'iOS App', 'Breathwork'],
   },
   {
@@ -33,7 +33,7 @@ export default function ProjectsPage() {
           </span>
         </h2>
         <p className="text-md sm:text-lg text-charcoal font-light max-w-2xl mx-auto">
-          Tools and experiences crafted at the intersection of wellness, culture, and tech.
+          We build tools and digital experiences crafted at the intersection of wellness, culture, and tech.
         </p>
       </div>
 
